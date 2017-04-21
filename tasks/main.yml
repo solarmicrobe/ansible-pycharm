@@ -59,7 +59,7 @@
   changed_when: no
 
 - name: Ensure pycharm bin exist
-  template: src=pycharm.j2 dest=/usr/bin/pycharm mode=755
+  template: src=pycharm.j2 dest=/usr/local/bin/pycharm mode=755
 
 - name: Ensure pycharm shortcut is present
   template: src=pycharm.desktop.j2 dest=/usr/share/applications/pycharm.desktop
