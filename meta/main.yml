@@ -1,8 +1,12 @@
 # meta file for pycharm
 ---
 galaxy_info:
-  author: Mischa ter Smitten
-  company: Oefenweb.nl B.V.
+  author: 
+    - Mischa ter Smitten
+    - Russell Parks
+  company: 
+    - Oefenweb.nl B.V.
+    - Bats Global Markets, Inc
   description: Set up PyCharm
   license: MIT
   min_ansible_version: 1.6
@@ -16,6 +20,11 @@ galaxy_info:
       versions:
         - wheezy
         - jessie
+    - name: SLES
+      versions:
+        - 11SP3
+        - 11SP4
+
   galaxy_tags:
     - development
     - system
