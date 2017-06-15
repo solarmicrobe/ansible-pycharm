@@ -1,6 +1,6 @@
 # tasks file for pycharm
 ---
-- name: create (download) directory
+- name: Create (download) directory
   file:
     path: "{{ pycharm_downloads_path }}"
     state: directory
@@ -30,7 +30,7 @@
     pycharm_version: "{{ releases_response.json.PCP.0.version }}"
   when: pycharm_version == 'latest' and pycharm_edition == 'professional'
 
-- name: download
+- name: Download
   get_url:
     url: "http://download.jetbrains.com/python/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
     dest: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
@@ -42,7 +42,7 @@
     - pycharm
     - pycharm-downloads
 
-- name: install
+- name: Install
   unarchive:
     src: "{{ pycharm_downloads_path }}/pycharm-{{ pycharm_edition }}-{{ pycharm_version }}.tar.gz"
     dest: "{{ pycharm_install_prefix }}"
@@ -52,11 +52,6 @@
     - configuration
     - pycharm
     - pycharm-install
-
-- name: Retrieve pycharm dir name
-  command: "ls -t {{ pycharm_install_prefix }}"
-  register: result_pycharm_folder_name
-  changed_when: no
 
 - name: Ensure pycharm bin exist
   template: src=pycharm.j2 dest=/usr/local/bin/pycharm mode=755
