@@ -48,6 +48,7 @@
     dest: "{{ pycharm_install_prefix }}"
     creates: "{{ pycharm_install_prefix }}/pycharm-{{ pycharm_version }}"
     copy: false
+  become: true
   tags:
     - configuration
     - pycharm
