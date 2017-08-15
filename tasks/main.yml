@@ -58,7 +58,7 @@
   template:
     src: pycharm.j2
     dest: /usr/local/bin/pycharm
-    mode: 755
+    mode: 0755
   become: true
 
 - name: Ensure pycharm shortcut is present
